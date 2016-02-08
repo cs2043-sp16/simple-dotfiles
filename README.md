@@ -189,3 +189,5 @@ This is because we just modified some important files!
     > . ~/.bashrc
     ```
 3. Changes to the `~/.bash_profile` and `~/.profile` only show up after you **log out** and then **log in**.  Not quit terminal and restart it, but completely log out and log back in.  You can also `source ~/.profile` to load them both, but that will only take effect for *the current terminal session*, as well as if and when you do have things defined in your `~/.bash_profile` that have meaning, there are often other programs that may need those definitions other than your terminal.  What and when and why depend entirely on what you are doing...
+
+4. Lastly, these all need to be in your *HOME* directory, which is referenced by `~`.  They must all also start with a `.`, which will be true if you were copy pasting my commands above.  So if you do `ls -al ~` you should see `.bashrc`, `.bash_profile`, etc.  If you see `bashrc` without a `.` in front of it, that is why it is not working.
