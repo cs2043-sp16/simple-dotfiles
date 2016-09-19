@@ -14,7 +14,7 @@ The colors included in this bashrc are only amenable to **dark** terminal backgr
 ### First, get the files on your computer
 
 ```bash
->>> cd ~/Desktop/
+>>> cd ~
 >>> git clone https://github.com/cs2043-sp16/simple-dotfiles.git
 >>> cd simple-dotfiles/
 ```
@@ -24,19 +24,19 @@ I had originally included a script to do this, but the script was bad in that if
 ### Make a backup of your original dotfiles if you want
 
 ```bash
->>> mkdir ~/Desktop/dotfiles_backup
+>>> mkdir ~/dotfiles_backup
 
 # make backups of the bash dotfiles
->>> mkdir ~/Desktop/dotfiles_backup/bash_backups
->>> cp ~/.bashrc ~/Desktop/dotfiles_backup/bash_backups/ORIG_BASHRC
->>> cp ~/.bash_profile ~/Desktop/dotfiles_backup/bash_backups/ORIG_BASH_PROFILE
+>>> mkdir ~/dotfiles_backup/bash_backups
+>>> cp ~/.bashrc ~/dotfiles_backup/bash_backups/ORIG_BASHRC
+>>> cp ~/.bash_profile ~/dotfiles_backup/bash_backups/ORIG_BASH_PROFILE
 
 # make backups of the vimrc, if applicable
->>> mkdir ~/Desktop/dotfiles_backup/vim
->>> cp ~/.vimrc ~/Desktop/dotfiles_backup/vim/ORIG_VIMRC
+>>> mkdir ~/dotfiles_backup/vim
+>>> cp ~/.vimrc ~/dotfiles_backup/vim/ORIG_VIMRC
 
 # make a backup of the ~/.profile if it exists
->>> cp ~/.profile ~/Desktop/dotfiles_backup/profile
+>>> cp ~/.profile ~/dotfiles_backup/profile
 ```
 
 Note that if you did not already have a `~/.bashrc`, then `cp` will tell you so.  Don't worry, this is not there on OSX.  Similarly, unless you already had a `~/.vimrc` there is nothing to backup.
@@ -83,7 +83,7 @@ Noting that I have two **>>** characters!  That says "append to the end of the f
 Assuming you have made the backups, simply `cat` the backup file you made from your desktop and redirect that to the designated file.  For example, if I wanted to restore the original `bashrc`, then I would just do
 
 ```bash
->>> cat ~/Desktop/dotfiles_backup/bash_backups/ORIG_BASHRC > ~/.bashrc
+>>> cat ~/dotfiles_backup/bash_backups/ORIG_BASHRC > ~/.bashrc
 ```
 
 to restore it to the original.  This is particularly meaningful with the Ubuntu virtual machine, as they had different `ls` aliases than I do.  Note again that I am now using a single **>** to say overwrite the entire file.
@@ -168,7 +168,7 @@ The colors presented in the example `bashrc` are only appealing on a dark backgr
 
 #### OSX Users:
 - Open a browser and go to here: [https://github.com/stephenway/monokai.terminal](https://github.com/stephenway/monokai.terminal)
-- In a terminal, go to ~/Desktop and clone the url.
+- In a terminal, go to ~ and clone the url.
 - I am showing you how to use Terminal at the moment, not iTerm!  If you opened Terminal.app, then you should be importing the monokai.terminal.
 - From terminal, choose Terminal -> Preferences (if you hit cmd+, (command and comma at same time), this will open the preferences for you, same shortcut works for **many** OSX applications.)
 - Go to the "Profiles" tab, and near the bottom middle of the left column that lists all of the options, click on the little Cog Wheel between (-) and (Default), and choose Import
