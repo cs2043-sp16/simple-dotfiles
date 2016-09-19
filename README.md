@@ -94,9 +94,9 @@ There are many different configurations you can use, but since I very much appro
 ### First, get the files on your computer
 
 ```bash
-> cd ~/Desktop/
-> git clone https://github.com/cs2043-sp16/simple-dotfiles.git
-> cd simple-dotfiles/
+>>> cd ~/Desktop/
+>>> git clone https://github.com/cs2043-sp16/simple-dotfiles.git
+>>> cd simple-dotfiles/
 ```
 
 I had originally included a script to do this, but the script was bad in that if you ran it more than once, you would have lost your original dotfiles.
@@ -104,19 +104,19 @@ I had originally included a script to do this, but the script was bad in that if
 ### Make a backup of your original dotfiles if you want
 
 ```bash
-> mkdir ~/Desktop/dotfiles_backup
+>>> mkdir ~/Desktop/dotfiles_backup
 
 # make backups of the bash dotfiles
-> mkdir ~/Desktop/dotfiles_backup/bash_backups
-> cp ~/.bashrc ~/Desktop/dotfiles_backup/bash_backups/ORIG_BASHRC
-> cp ~/.bash_profile ~/Desktop/dotfiles_backup/bash_backups/ORIG_BASH_PROFILE
+>>> mkdir ~/Desktop/dotfiles_backup/bash_backups
+>>> cp ~/.bashrc ~/Desktop/dotfiles_backup/bash_backups/ORIG_BASHRC
+>>> cp ~/.bash_profile ~/Desktop/dotfiles_backup/bash_backups/ORIG_BASH_PROFILE
 
 # make backups of the vimrc, if applicable
-> mkdir ~/Desktop/dotfiles_backup/vim
-> cp ~/.vimrc ~/Desktop/dotfiles_backup/vim/ORIG_VIMRC
+>>> mkdir ~/Desktop/dotfiles_backup/vim
+>>> cp ~/.vimrc ~/Desktop/dotfiles_backup/vim/ORIG_VIMRC
 
 # make a backup of the ~/.profile if it exists
-> cp ~/.profile ~/Desktop/dotfiles_backup/profile
+>>> cp ~/.profile ~/Desktop/dotfiles_backup/profile
 ```
 
 Note that if you did not already have a `~/.bashrc`, then `cp` will tell you so.  Don't worry, this is not there on OSX.  Similarly, unless you already had a `~/.vimrc` there is nothing to backup.
@@ -126,25 +126,25 @@ Note that if you did not already have a `~/.bashrc`, then `cp` will tell you so.
 1. Replace the contents of the bashrc file:
 
     ```bash
-    > cat bash_addons/bashrc > ~/.bashrc
+    >>> cat bash_addons/bashrc > ~/.bashrc
     ```
 
 2. Replace the contents of the bash_profile file:
 
     ```bash
-    > cat bash_addons/bash_profile > ~/.bash_profile
+    >>> cat bash_addons/bash_profile > ~/.bash_profile
     ```
 
 3. Replace the vimrc contents, and create the colors directory for vim to behave correctly with the provided vimrc.
 
     ```bash
     # make the vimrc have the right contents
-    > cat vim_addons/vimrc > ~/.vimrc
+    >>> cat vim_addons/vimrc > ~/.vimrc
 
     # create the appropriate directory structure for colors, put the monokai theme there
-    > mkdir -p ~/.vim/
-    > mkdir -p ~/.vim/colors/
-    > cp vim_addons/colors/monokai.vim ~/.vim/colors/
+    >>> mkdir -p ~/.vim/
+    >>> mkdir -p ~/.vim/colors/
+    >>> cp vim_addons/colors/monokai.vim ~/.vim/colors/
     ```
 
 
@@ -153,7 +153,7 @@ Note that if you did not already have a `~/.bashrc`, then `cp` will tell you so.
 Because we are using `bash` in this class, we want to source our `.bash_profile` from the `.profile`.  This is the appropriate way to do it, even though you often see people sourcing it from the `bashrc`.  You can accomplish this by simply doing
 
 ```bash
-> cat profile >> ~/.profile
+>>> cat profile >> ~/.profile
 ```
 
 Noting that I have two **>>** characters!  That says "append to the end of the file", where a single **>** will overwrite the entire thing.  Depending on what distribution you are running, there may be a lot more in that file that you want to leave alone.
@@ -163,7 +163,7 @@ Noting that I have two **>>** characters!  That says "append to the end of the f
 Assuming you have made the backups, simply `cat` the backup file you made from your desktop and redirect that to the designated file.  For example, if I wanted to restore the original `bashrc`, then I would just do
 
 ```bash
-> cat ~/Desktop/dotfiles_backup/bash_backups/ORIG_BASHRC > ~/.bashrc
+>>> cat ~/Desktop/dotfiles_backup/bash_backups/ORIG_BASHRC > ~/.bashrc
 ```
 
 to restore it to the original.  This is particularly meaningful with the Ubuntu virtual machine, as they had different `ls` aliases than I do.  Note again that I am now using a single **>** to say overwrite the entire file.
@@ -180,13 +180,13 @@ This is because we just modified some important files!
 2. Changes to the `~/.bashrc` can be loaded in if you execute this in your terminal
 
     ```bash
-    > source ~/.bashrc
+    >>> source ~/.bashrc
     ```
 
     which is the same thing as
 
     ```bash
-    > . ~/.bashrc
+    >>> . ~/.bashrc
     ```
 3. Changes to the `~/.bash_profile` and `~/.profile` only show up after you **log out** and then **log in**.  Not quit terminal and restart it, but completely log out and log back in.  You can also `source ~/.profile` to load them both, but that will only take effect for *the current terminal session*, as well as if and when you do have things defined in your `~/.bash_profile` that have meaning, there are often other programs that may need those definitions other than your terminal.  What and when and why depend entirely on what you are doing...
 

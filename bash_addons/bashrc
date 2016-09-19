@@ -27,6 +27,14 @@ case "$OS" in
         open () {
             xdg-open "$@" &>/dev/null
         }
+
+        # I want to be able to run vlc from the commandline without any output, and let it keep running after
+        # I close my terminal (nohup).
+        #
+        # Of course...you have to have vlc installed.
+        vlc () {
+            nohup "$(which vlc)" "$@" &>/dev/null &
+        }
         ;;
     *)
         echo "Unknown OS: $OS"
@@ -44,8 +52,6 @@ alias back="cd - > /dev/null"
 # alias newbuild='rm -rf build && mkdir build && cd build && cmake ..'
 
 # Power.  MUCH better looking grep.
-#
-# CAUTION: You should leave these commented out for HW1!!!
-# alias grep="grep -Hn --color=auto"
-# alias egrep="egrep -Hn --color=auto"
-# alias pgrep="pgrep -Hn --color=auto"
+alias grep="grep -Hn --color=auto"
+alias egrep="egrep -Hn --color=auto"
+alias pgrep="pgrep -Hn --color=auto"
