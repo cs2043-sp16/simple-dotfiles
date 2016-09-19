@@ -9,7 +9,7 @@ syntax enable                           " enable syntax highlighting
 colorscheme monokai                     " use colorscheme in ~/.vim/colors
 
 " Display Line Numbers
-"set number                              " display line numbers
+set number                              " display line numbers
 set ruler                               " display cursor position
 
 " Searching Criteria
