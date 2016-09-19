@@ -62,7 +62,6 @@ Note that if you did not already have a `~/.bashrc`, then `cp` will tell you so.
     >>> cat vim_addons/vimrc > ~/.vimrc
 
     # create the appropriate directory structure for colors, put the monokai theme there
-    >>> mkdir -p ~/.vim/
     >>> mkdir -p ~/.vim/colors/
     >>> cp vim_addons/colors/monokai.vim ~/.vim/colors/
     ```
